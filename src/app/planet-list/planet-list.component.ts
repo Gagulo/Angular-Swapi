@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Planet } from '../model/planet';
 import { PlanetService } from '../services/planet.service';
 
 @Component({
@@ -15,11 +14,6 @@ export class PlanetListComponent implements OnInit {
               private service: PlanetService) { }
 
   ngOnInit() {
-   /*  this.http.get('https://swapi.co/api/planets/')
-    .subscribe((response) => {
-      const planet = response;
-      console.log(planet);
-    }); */
   }
 
   onGet() {
