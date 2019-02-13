@@ -1,7 +1,11 @@
-export interface Planet {
-    name: string;
-    population: number;
-    diameter: number;
-    climate: string;
-    terrain: string;
+export class Planet {
+  name: string;
+  climate: string;
+  gravity: string;
+  terrain: string;
+  population: number;
+  residents: string[];
+  residentsName: string[];
+  film: string[];
+  url: string;
 }

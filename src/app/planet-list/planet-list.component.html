@@ -1,7 +1,9 @@
-<p>
-  planet-list works!
-</p>
+<div>
+  <button (click)="morePlanets()" *ngIf="planets.next">More Planets</button>
+</div>
 
-<li *ngFor='let planet of planets'>
-  {{ planet.name }} {{ planet.population }}
-</li>
+<mat-list role="list" *ngIf="planets">
+  <mat-list-item role="listitem" *ngFor="let planet of planets.results">
+    {{ planet.name }}
+  </mat-list-item>
+</mat-list>
