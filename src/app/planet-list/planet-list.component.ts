@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { PlanetService } from '../services/planet.service';
+import { Planet } from '../model/planet';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-planet-list',
@@ -10,17 +11,13 @@ import { PlanetService } from '../services/planet.service';
 })
 export class PlanetListComponent implements OnInit {
 
-  constructor(private http: HttpClient,
-              private service: PlanetService) { }
+  planets: Planet[];
+
+  constructor(private service: PlanetService) { }
 
   ngOnInit() {
+    this.service.callSwapi()
+      .subscribe(data => this.planets = data);
   }
 
-  onGet() {
-    this.service.callSwapi()
-    .subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
-  }
 }

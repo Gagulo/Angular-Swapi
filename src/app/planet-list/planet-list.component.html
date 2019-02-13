@@ -2,4 +2,6 @@
   planet-list works!
 </p>
 
-<button (click)="onGet()"> Get data</button>
+<li *ngFor='let planet of planets'>
+  {{ planet.name }} {{ planet.population }}
+</li>
